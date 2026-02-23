@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Walkable Resume — Brendon Ehmann</title>
+  <link rel="stylesheet" href="./resume.css" />
+</head>
+<body>
+
+  <!-- Loading indicator — removed by game.js once resume.json is fetched. -->
+  <div id="loading">INITIALISING PCB ENVIRONMENT…</div>
+
+  <!-- ── Main layout: game canvas (left) + sidebar (right) ────────────── -->
+  <div id="layout">
+
+    <!-- ── Game area ─────────────────────────────────────────────────── -->
+    <div id="game-area">
+
+      <!-- Phaser mounts its canvas here -->
+      <div id="game-container">
+
+        <!-- SVG layer for leader lines — absolutely positioned over the canvas -->
+        <svg id="leader-svg" aria-hidden="true" focusable="false"></svg>
+
+        <!-- HTML overlay: page title + canvas-internal controls hint -->
+        <div id="ui-overlay">
+          <div id="page-title" aria-label="Page title">Brendon Ehmann Interactive Resume (WASD to move)</div>
+          <div id="controls-hint" aria-hidden="true">
+            <span>WASD / ARROWS — NAVIGATE</span>
+            <span>APPROACH MODULE — PANEL OPENS</span>
+            <span>ESC — DISMISS CALLOUT</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Anchored callout (positioned by JS) ──────────────────────── -->
+      <!--
+        Placed as a sibling of #game-container so it can overlap the canvas
+        edge but is still within #game-area coordinate space. JS positions it
+        via left/top after converting world→screen coordinates.
+      -->
+      <div id="callout" class="hidden" role="complementary" aria-live="polite">
+        <button class="callout-close" id="callout-close" aria-label="Dismiss callout">&#x2715;</button>
+        <div class="callout-label" id="callout-label">MODULE ID</div>
+        <div class="callout-title" id="callout-title"></div>
+        <ul class="callout-bullets" id="callout-bullets"></ul>
+        <button class="callout-open-btn" id="callout-open-btn">Open in Readout ›</button>
+        <div class="callout-signal" id="callout-signal" aria-live="assertive"></div>
+      </div>
+
+    </div><!-- /#game-area -->
+
+    <!-- ── Sidebar: Module Readout ───────────────────────────────────── -->
+    <aside id="sidebar" aria-label="Module Readout">
+
+      <!-- Sidebar header -->
+      <div class="sidebar-header">
+        <div class="sidebar-header-top">
+          <span class="sidebar-label">MODULE READOUT</span>
+          <button id="sidebar-toggle" class="sidebar-toggle-btn"
+                  aria-label="Collapse sidebar" aria-expanded="true">◀</button>
+        </div>
+        <div class="sidebar-section-id" id="sidebar-section-id">NO MODULE SELECTED</div>
+      </div>
+
+      <!-- Readout body (full content) -->
+      <div class="sidebar-body" id="sidebar-body">
+        <div class="sidebar-empty" id="sidebar-empty">
+          <p>Walk near a module on the PCB to load its data here.</p>
+        </div>
+        <div id="sidebar-content" class="hidden">
+          <h2 id="sidebar-title"></h2>
+          <ul id="sidebar-bullets" class="sidebar-bullets"></ul>
+          <div id="sidebar-link"></div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="sidebar-divider"></div>
+
+      <!-- Index list -->
+      <div class="sidebar-index">
+        <div class="sidebar-index-header">
+          <span class="sidebar-label">SECTION INDEX</span>
+        </div>
+        <ul id="sidebar-index-list" class="sidebar-index-list"></ul>
+      </div>
+
+    </aside><!-- /#sidebar -->
+
+  </div><!-- /#layout -->
+
+  <!-- Phaser 3 via CDN (no build step required) -->
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
+  <!-- Game logic -->
+  <script src="./game.js"></script>
+
+</body>
+</html>

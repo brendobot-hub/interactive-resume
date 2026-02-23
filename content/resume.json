@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "name": "Your Name",
+    "location": "City, State/Country",
+    "phone": "000-000-0000",
+    "email": "you@example.com",
+    "linkedin": "https://linkedin.com/in/your-handle",
+    "github": "https://github.com/your-handle",
+    "titles": [
+      "Primary Title",
+      "Secondary Title"
+    ]
+  },
+  "sections": [
+    {
+      "id": "summary-primary",
+      "title": "Summary — Primary Focus",
+      "bullets": [
+        "Brief one-line summary of your professional focus.",
+        "Short statement about your experience and impact.",
+        "High-level strengths or differentiators."
+      ]
+    },
+    {
+      "id": "summary-secondary",
+      "title": "Summary — Secondary Focus",
+      "bullets": [
+        "Alternate positioning for different roles or audiences.",
+        "Key domain expertise or specialization.",
+        "How you bridge disciplines or add value."
+      ]
+    },
+    {
+      "id": "core-skills-primary",
+      "title": "Core Skills — Primary",
+      "bullets": [
+        "Category: tools, languages, or platforms.",
+        "Category: architecture or methodologies.",
+        "Category: frontend/backend/cloud/etc.",
+        "Category: data, infra, or ops.",
+        "Ways of working: process, collaboration style."
+      ]
+    },
+    {
+      "id": "core-skills-secondary",
+      "title": "Core Skills — Secondary",
+      "bullets": [
+        "Category: security/governance/compliance/etc.",
+        "Category: automation, CI/CD, testing, quality.",
+        "Category: cloud/security/infra practices.",
+        "Category: IAM, networking, encryption (as applicable).",
+        "Category: auditing, policy, or assurance (as applicable)."
+      ],
+      "link": {
+        "label": "Optional portfolio or playbook",
+        "url": "https://example.com/portfolio"
+      }
+    },
+    {
+      "id": "experience-1",
+      "title": "Experience — Company / Role | Location | Years",
+      "bullets": [
+        "Impactful accomplishment or responsibility.",
+        "What you built, improved, or led.",
+        "Technologies or methods used.",
+        "Outcome or measurable result."
+      ]
+    },
+    {
+      "id": "experience-2",
+      "title": "Experience — Company / Role | Location | Years",
+      "bullets": [
+        "Impactful accomplishment or responsibility.",
+        "What you built, improved, or led.",
+        "Technologies or methods used.",
+        "Outcome or measurable result."
+      ]
+    },
+    {
+      "id": "experience-3",
+      "title": "Experience — Company / Role | Location | Years",
+      "bullets": [
+        "Impactful accomplishment or responsibility.",
+        "What you built, improved, or led.",
+        "Technologies or methods used.",
+        "Outcome or measurable result."
+      ]
+    },
+    {
+      "id": "experience-earlier",
+      "title": "Earlier Career — Roles / Domains | Years",
+      "bullets": [
+        "General responsibilities across earlier roles.",
+        "Key technologies or systems you worked with.",
+        "Notable patterns of impact or growth.",
+        "Summary of earlier experience scope."
+      ]
+    },
+    {
+      "id": "education-certs",
+      "title": "Education & Certifications",
+      "bullets": [
+        "Degree or program (Year).",
+        "Additional degree or ongoing study.",
+        "Certification(s) with year.",
+        "Any notable training or credentials."
+      ]
+    },
+    {
+      "id": "links",
+      "title": "Links",
+      "bullets": [
+        "LinkedIn: https://linkedin.com/in/your-handle",
+        "GitHub: https://github.com/your-handle",
+        "Portfolio: https://your-site.example"
+      ],
+      "link": {
+        "label": "Primary portfolio",
+        "url": "https://your-site.example"
+      }
+    }
+  ]
+}
